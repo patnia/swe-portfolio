@@ -125,6 +125,18 @@ const EXPERIENCE = [
   },
 ]
 
+// ── BOOT SEQUENCE ───────────────────────────────────────────────────────────
+
+const BOOT = [
+  '> Initializing portfolio.exe...',
+  '> Loading experience modules... [OK]',
+  '> Mounting skill trees......... [OK]',
+  '> Connecting to project repo... [OK]',
+  '> All systems operational.',
+  '',
+  "  Welcome to Aadi Patni's portfolio.",
+]
+
 // ── COMPONENT ───────────────────────────────────────────────────────────────
 
 export default function Portfolio() {
@@ -135,23 +147,12 @@ export default function Portfolio() {
   const [skillsVisible, setSkillsVisible] = useState(false)
   const [activeSkillCat, setActiveSkillCat] = useState('Languages')
   const [openProject, setOpenProject] = useState<number | null>(null)
-  const [bootLines, setBootLines] = useState<string[]>([])
+  const [bootLines, setBootLines] = useState<string[]>([BOOT[0]])
   const [bootDone, setBootDone] = useState(false)
   const skillsRef = useRef<HTMLDivElement>(null)
 
-  // Boot sequence
-  const BOOT = [
-    '> Initializing portfolio.exe...',
-    '> Loading experience modules... [OK]',
-    '> Mounting skill trees......... [OK]',
-    '> Connecting to project repo... [OK]',
-    '> All systems operational.',
-    '',
-    '  Welcome to Aadi Patni\'s portfolio.',
-  ]
-
   useEffect(() => {
-    let i = 0
+    let i = 1
     const interval = setInterval(() => {
       if (i < BOOT.length) {
         setBootLines(prev => [...prev, BOOT[i]])
@@ -217,7 +218,7 @@ export default function Portfolio() {
                 className={`text-sm leading-8 ${
                   line.includes('[OK]') ? 'text-green-400' :
                   line.includes('Welcome') ? 'text-white font-bold text-base' :
-                  'text-green-600'
+                  'text-green-500'
                 }`}
               >
                 {line}
