@@ -96,14 +96,8 @@ body {
 
 /* Fade in animation */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { transform: translateY(20px); }
+  to { transform: translateY(0); }
 }
 
 .fade-in-up {
@@ -113,7 +107,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .fade-in-up {
     animation: none;
-    opacity: 1;
     transform: none;
   }
 }
