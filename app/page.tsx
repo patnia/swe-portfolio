@@ -119,7 +119,7 @@ const EXPERIENCE = [
     bullets: [
       'Built data collection pipeline aggregating 500k+ user interaction events for HCI research',
       'Developed visualizations in D3.js for research paper published in CHI 2024',
-      'Maintained lab's open-source toolkit with 800+ GitHub stars',
+      "Maintained lab's open-source toolkit with 800+ GitHub stars",
     ],
     tech: ['Python', 'JavaScript', 'D3.js', 'PostgreSQL', 'React'],
   },
